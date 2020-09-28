@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Pengenalan Java Script</title>
+    <style>
+        .makered {
+            color: red;
+        }
+
+        .hide {
+            visibility: hidden;
+        }
+
+        .show {
+            visibility: visible;
+        }
+    </style>
+
+<script src="../script.js"></script>
+</head>
+
+<body>
+
+    <button type="button" onclick='document.getElementById("baris1").className="makered"'>Pergi</button>
+    <p id="baris1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <br />
+
+    <button type="button" onclick='document.getElementById("baris2").className="hide"'>Hilang</button>
+    <button type="button" onclick='document.getElementById("baris2").className="show"'>Nampak</button>
+    <p id="baris2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <br />
+
+</body>
+</html>

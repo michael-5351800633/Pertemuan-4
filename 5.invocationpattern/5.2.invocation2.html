@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>Objek Java Script</title>
+
+    <script>
+
+        var Person = {
+
+            Email: "",
+            Nim: "",
+            Nama: "",
+            Hobbies: [],
+
+            Addbio: function(pEmail, pNim, pNama){
+                this.Email = pEmail;
+                this.Nim = pNim;
+                this.Nama = pNama;
+            },
+
+            AddHobby: function(pHobby) {
+                this.Hobbies.push(pHobby);
+            },
+
+            Write: function(){
+               var str = "Bio: " + this.Email + ", " + this.Nim + ", " + this.Nama;
+               var hobb = "Hobbies: ";
+               var item;
+               for(item of this.Hobbies){
+                   hobb += item + " ";
+               }
+               return str + " " + hobb;
+            }
+        }
+
+        function Person(pEmail, pNim, pNama) {
+            this.Email = pEmail;
+            this.Nim = pNim;
+            this.Nama = pNama;
+
+            this.ValidasiData = function ()
+            {
+            if ((this.Email != "") && (this.Nim != "") && (this.Nama != "")) {
+                return "OK";
+            }else {
+                return "No";
+            }
+            
+            }
+        }
+
+        function AddbioInfo(pEmail, pNim, pNama){
+            Person.Addbio(pEmail, pNim, pNama);
+        }
+        function AddHobby(pHobby){
+            Person.AddHobby(pHobby);
+        }
+
+        function LoadObject() {
+            document.getElementById("oResult").innerHTML = Person.Write();
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="text" id="iEmail" placeholder="Masukkan Email" />
+    <input type="text" id="iNim" placeholder="Masukkan NIM" />
+    <input type="text" id="iNama" placeholder="Masukkan Nama" />
+
+    <button type="button" 
+        onclick='CreateObject(
+            document.getElementById("iEmail").value,
+            document.getElementById("iNim").value,
+            document.getElementById("iPerson").value)'>Bio Info</button>
+
+    <br><br>
+
+    <input type="text" id="iHobby" placeholder = "Masukkan Hobby" style="width: 550px;" readonly />
+
+    <button type="button" onclick='Person.AddHobby(document.getElementById("iHobby").value)'>add</button>
+
+    <br><br>
+
+    <button type="button" onclick='LoadObject()'>Load</button>
+
+    <input type="text" id="iPerson" style="width: 550px;" readonly />
+
+</body>
+</html>

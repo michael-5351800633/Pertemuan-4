@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Sintax Java Script</title>
+
+    <script>
+        var str = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+        function ForLoop(iteration){
+            for(i = 0; i < iteration; i++){
+                document.getElementById("oResult").innerHTML += str + "<br />";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <input type="number" id="iLoop" placeholder="Type Number of Iteration" style="width: 500px;">
+    <button type="button" onclick='ForLoop(document.getElementById("iLoop").value)'>Pergi</button>
+
+    <p id="oResult"></p>
+</body>
+</html>

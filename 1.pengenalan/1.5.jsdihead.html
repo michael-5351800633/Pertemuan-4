@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Pengenalan Java Script</title>
+    
+    <style>
+        .makered {
+            color: red;
+        }
+
+        .hide {
+            visibility: hidden;
+        }
+
+        .show {
+            visibility: visible;
+        }
+    </style>
+
+    <script>
+        function ChangeLine1Style() {
+            document.getElementById("baris1").className = "makered";
+        }
+
+        function ChangeStyle(id, classname) {
+            document.getElementById(id).className = classname;
+        }
+    </script>
+</head>
+
+<body>
+
+    <button type="button" onclick='ChangeLine1Style()'>Pergi</button>
+    <p id="baris1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <br />
+
+    <button type="button" onclick='ChangeStyle("baris2","hide")'>Hilang</button>
+    <button type="button" onclick='ChangeStyle("baris2","show")'>Nampak</button>
+    <p id="baris2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <br />
+</body>
+</html>
